@@ -12,6 +12,14 @@
     NSString* cuisineType;
     int yearOpened;
     
+//    @interface Review : NSObject
+//    {
+//    NSString* reviewerName;
+//    NSString* text;
+//    int score; //(1 to 5, how good the reviewer thought the restaurant was)
+//    int numberOfHelpfulRatings;
+//    int numberOfUnhelpfulRatings;    
+//    }
     
 }
 @property(readwrite, strong) NSString* address;
