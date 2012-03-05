@@ -6,6 +6,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Restaurant.h"
+#import "Review.h"
 
 @interface DetailViewController : UIViewController
 {

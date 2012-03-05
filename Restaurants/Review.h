@@ -18,7 +18,7 @@
     int numberOfUnhelpfulReviews;    
 }
 
-@property(readwrite, strong) NSString* reviewe;
+@property(readwrite, strong) NSString* reviewer;
 @property(readwrite, strong) NSString* text;
 @property(readwrite) int score;
 @property(readwrite) int numberOfHelpfulReviews;
