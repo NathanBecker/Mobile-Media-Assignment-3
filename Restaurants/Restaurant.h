@@ -26,6 +26,7 @@
 @property(readwrite, strong) NSString* name;
 @property(readwrite, strong) NSString* cuisineType;
 @property(readwrite) int yearOpened;
+@property(readwrite, strong) NSMutableArray *reviews;
 
 -(int)age;
 

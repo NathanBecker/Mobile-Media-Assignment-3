@@ -11,6 +11,6 @@
 @implementation Review
 
 
-@synthesize text, reviewer, score, numberOfHelpfulReviews, numberOfUnhelpfulReviews;
+@synthesize text, reviewer, score, numberOfHelpfulReviews, numberOfUnhelpfulReviews, reviews;
 
 @end
