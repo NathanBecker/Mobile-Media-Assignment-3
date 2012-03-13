@@ -68,8 +68,9 @@
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
     
-    helpfulReviewLabel.text = [NSString stringWithFormat:@"The review is %@. Reviewer is ", review1.text, review1.reviewer];
+    helpfulReviewLabel.text = [NSString stringWithFormat:@"%@ — %@", review1.text, review1.reviewer];
     
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"%@ Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, review1.numberOfHelpfulReviews + review1.numberOfUnhelpfulReviews];
     
 }
 
