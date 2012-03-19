@@ -70,7 +70,9 @@
     
     helpfulReviewLabel.text = [NSString stringWithFormat:@"%@ — %@", review1.text, review1.reviewer];
     
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"%@ Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, review1.numberOfHelpfulReviews + review1.numberOfUnhelpfulReviews];
+    // got some help below from Michelle Kirby!!!!!!!!!!!!!!!!
+    
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"**Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, [review1 totalReview]];
     
 }
 

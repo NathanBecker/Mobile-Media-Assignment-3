@@ -13,4 +13,22 @@
 
 @synthesize text, reviewer, score, numberOfHelpfulReviews, numberOfUnhelpfulReviews, reviews;
 
+-(id)init
+{
+    self = [super init];
+    if(self)
+    {
+        
+    }
+    return self;
+}
+
+
+-(int) totalReview    
+{
+    int totalReviewCount;
+    totalReviewCount = numberOfHelpfulReviews + numberOfUnhelpfulReviews;
+    return totalReviewCount;
+}
+
 @end
