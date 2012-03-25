@@ -61,6 +61,12 @@
     review4.numberOfUnhelpfulReviews = 5;
     
 
+    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, nil];   
+
+    
+    Review* bestReview = [restaurant mostHelpfulReview];
+    
+    reviewLabel.text = [review text];
     
     
     
@@ -69,11 +75,12 @@
     cuisineLabel.text = [restaurant cuisineType];
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
     
-    helpfulReviewLabel.text = [NSString stringWithFormat:@"%@ — %@", review1.text, review1.reviewer];
-    
-    // got some help below from Michelle Kirby!!!!!!!!!!!!!!!!
-    
-    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
+    if (bestReview.numberOfHelpfulReviews<5) {
+        helpfulReviewLabel.text = [NSString stringWithFormat:@"There are not enough ratings yet"];
+    }
+    if (bestReview.numberOfHelpfulReviews>=5) {
+        helpfulReviewLabel.text = [NSString stringWithFormat:@"%@ –%@", bestReview.text, bestReview.reviewer];
+    }
     
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"*Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, [review1 totalReview]];
     
