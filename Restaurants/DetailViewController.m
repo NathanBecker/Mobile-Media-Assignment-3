@@ -18,6 +18,7 @@
 @synthesize star3;
 @synthesize star4;
 @synthesize star5;
+@synthesize reviewLabel;
 
 #pragma mark - View lifecycle
 
@@ -25,7 +26,7 @@
 {
     [super viewDidLoad];
     restaurant = [[Restaurant alloc] init];
-    
+
     restaurant.name = @"Pio Pio";
     restaurant.address = @"746 First Avenue\nNew York, NY 10128";
     restaurant.cuisineType = @"Peruvian";
@@ -72,10 +73,11 @@
     
     // got some help below from Michelle Kirby!!!!!!!!!!!!!!!!
     
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"**Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, [review1 totalReview]];
+    restaurant.reviews = [[NSArray alloc] initWithObjects:review1, review2, review3, review4, nil];
     
-}
-
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"*Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, [review1 totalReview]];
+    
+        }
 
 
 - (void)viewDidUnload
