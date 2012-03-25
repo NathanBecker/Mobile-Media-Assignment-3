@@ -22,7 +22,7 @@
     return 2012 - yearOpened;
 }
 
-//I stole this from Michelle Kirby---there was no way I could have written this from my brain...
+//I stole this code below from Michelle Kirby---there was no way I could have written this from my brain...
 
 -(Review*) mostHelpfulReview
 {

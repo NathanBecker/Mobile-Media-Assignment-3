@@ -22,6 +22,7 @@
 
 #pragma mark - View lifecycle
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,9 +61,24 @@
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
     
-
-    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, nil];   
-
+//    [restaurant.reviews addObject:
+//     review5.text = @"Love it!";
+//     review5.reviewer = @"Nathan Becker";
+//     review5.score = 3;
+//     review5.numberOfHelpfulReviews = 23;
+//     review5.numberOfUnhelpfulReviews = 4;
+//     ];
+//     NO IDEA WHERE THIS IS SUPPOSED TO GO, SO I'LL FAKE IT:
+    
+    Review* review5 = [[Review alloc] init];
+    review5 .text = @"Hated it!";
+    review5.reviewer = @"Nathan";
+    review5.score = 3;
+    review5.numberOfHelpfulReviews = 20;
+    review5.numberOfUnhelpfulReviews = 2;
+    
+    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, review5, nil]; 
+    
     
     Review* bestReview = [restaurant mostHelpfulReview];
     
