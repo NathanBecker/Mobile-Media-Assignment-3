@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     restaurant = [[Restaurant alloc] init];
-
+    
     restaurant.name = @"Pio Pio";
     restaurant.address = @"746 First Avenue\nNew York, NY 10128";
     restaurant.cuisineType = @"Peruvian";
@@ -61,24 +61,15 @@
     review4.numberOfHelpfulReviews = 14;
     review4.numberOfUnhelpfulReviews = 5;
     
-//    [restaurant.reviews addObject:
-//     review5.text = @"Love it!";
-//     review5.reviewer = @"Nathan Becker";
-//     review5.score = 3;
-//     review5.numberOfHelpfulReviews = 23;
-//     review5.numberOfUnhelpfulReviews = 4;
-//     ];
-//     NO IDEA WHERE THIS IS SUPPOSED TO GO, SO I'LL FAKE IT:
-    
     Review* review5 = [[Review alloc] init];
-    review5 .text = @"Hated it!";
+    review5.text = @"Hated it!";
     review5.reviewer = @"Nathan";
     review5.score = 3;
-    review5.numberOfHelpfulReviews = 20;
+    review5.numberOfHelpfulReviews = 300;
     review5.numberOfUnhelpfulReviews = 2;
     
-    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, review5, nil]; 
-    
+    restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, nil]; 
+    [restaurant.reviews addObject:review5];
     
     Review* bestReview = [restaurant mostHelpfulReview];
     
@@ -92,15 +83,15 @@
     ageLabel.text = [NSString stringWithFormat:@"Est. %i (%i years ago)", restaurant.yearOpened, [restaurant age]];
     
     if (bestReview.numberOfHelpfulReviews<5) {
-        helpfulReviewLabel.text = [NSString stringWithFormat:@"There are not enough ratings yet"];
+        helpfulReviewLabel.text = [NSString stringWithFormat:@"There are not enough reviews yet"];
     }
     if (bestReview.numberOfHelpfulReviews>=5) {
         helpfulReviewLabel.text = [NSString stringWithFormat:@"%@ –%@", bestReview.text, bestReview.reviewer];
     }
     
-    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"*Most helpful review – %i of %i found this helpful", review1.numberOfHelpfulReviews, [review1 totalReview]];
+    helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"*Most helpful review – %i of %i found this helpful", bestReview.numberOfHelpfulReviews, [bestReview totalReview]];
     
-        }
+}
 
 
 - (void)viewDidUnload
