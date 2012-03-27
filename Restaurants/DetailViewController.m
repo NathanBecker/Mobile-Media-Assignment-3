@@ -68,6 +68,37 @@
     review5.numberOfHelpfulReviews = 300;
     review5.numberOfUnhelpfulReviews = 2;
     
+    
+    
+    ////STARS/// 
+    
+    if ([restaurant averageCustomerReview]<1.6) {
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if (1.6<[restaurant averageCustomerReview]<2.6) {
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+        star2.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if (2.6<[restaurant averageCustomerReview]<3.6) {
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+        star2.image = [UIImage imageNamed:@"Star_ON.png"];
+        star3.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if (3.6<[restaurant averageCustomerReview]<4.6) {
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+        star2.image = [UIImage imageNamed:@"Star_ON.png"];
+        star3.image = [UIImage imageNamed:@"Star_ON.png"];
+        star4.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+    if ([restaurant averageCustomerReview] > 4.6) {
+        star1.image = [UIImage imageNamed:@"Star_ON.png"];
+        star2.image = [UIImage imageNamed:@"Star_ON.png"];
+        star3.image = [UIImage imageNamed:@"Star_ON.png"];
+        star4.image = [UIImage imageNamed:@"Star_ON.png"];
+        star5.image = [UIImage imageNamed:@"Star_ON.png"];
+    }
+
+    
     restaurant.reviews = [[NSMutableArray alloc] initWithObjects:review1, review2, review3, review4, nil]; 
     [restaurant.reviews addObject:review5];
     
