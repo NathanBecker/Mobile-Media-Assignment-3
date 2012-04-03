@@ -61,6 +61,21 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath
+                                                                              *)indexPath
+{
+    //This is the cell identifier we set in the Storyboard file
+    NSString* cellIdentifier = @"RestaurantCell";
+    
+    //This line asks the tableView to "reuse" a cell. It will return a UITableViewCell with the identifier given.
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    //The cell type we selected in the storyboard supports a textLabel and a detailTextLabel. We'll set them both here.
+    cell.textLabel.text = @"Pio Pio";
+    cell.detailTextLabel.text = @"Peruvian";
+    return cell;
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
