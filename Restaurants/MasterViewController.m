@@ -7,6 +7,7 @@
 #import "MasterViewController.h"
 
 @implementation MasterViewController
+@synthesize restaurants;
 
 
 - (void)awakeFromNib
@@ -73,6 +74,32 @@
     [piopio.reviews addObject:review5];
 
 
+    Restaurant* SidewalkCafe = [[Restaurant alloc] init];
+    SidewalkCafe.name = @"Sidewalk Cafe";
+    SidewalkCafe.address = @"30 Maujer Street, Brooklyn, NY";
+    SidewalkCafe.cuisineType = @"French";
+    SidewalkCafe.yearOpened = 2010;
+    
+    self.restaurants = [[NSMutableArray alloc] initWithObjects: piopio, SidewalkCafe, nil];
+    
+    Review* SidewalkCafeReview1 = [[Review alloc] init];
+    SidewalkCafeReview1.text = @"SUCKS.";
+    SidewalkCafeReview1.reviewer = @"Nathan2";
+    SidewalkCafeReview1.score = 1;
+    SidewalkCafeReview1.numberOfHelpfulReviews = 5;
+    SidewalkCafeReview1.numberOfUnhelpfulReviews = 1;
+    
+    Review* SidewalkCafeReview2 = [[Review alloc] init];
+    SidewalkCafeReview2.text = @"Tuesday is half price night. I wish.";
+    SidewalkCafeReview2.reviewer = @"Cooper Jones";
+    SidewalkCafeReview2.score = 2;
+    SidewalkCafeReview2.numberOfHelpfulReviews = 20;
+    SidewalkCafeReview2.numberOfUnhelpfulReviews = 4;
+    
+    SidewalkCafe.reviews = [[NSMutableArray alloc] initWithObjects: SidewalkCafeReview1, SidewalkCafeReview2, nil];
+    
+  
+    
 }
 
 - (void)viewDidUnload
