@@ -139,20 +139,23 @@
 {
     return restaurants.count;
 }
-- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath
-                                                                              *)indexPath
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //This is the cell identifier we set in the Storyboard file
     NSString* cellIdentifier = @"RestaurantCell";
-    
-    //This line asks the tableView to "reuse" a cell. It will return a UITableViewCell with the identifier given.
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    
-    //The cell type we selected in the storyboard supports a textLabel and a detailTextLabel. We'll set them both here.
-    cell.textLabel.text = @"Pio Pio";
-    cell.detailTextLabel.text = @"Peruvian";
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    cell.textLabel.text = currentRestaurant.name;
+    cell.detailTextLabel.text = currentRestaurant.cuisineType;
     return cell;
 }
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    DetailViewController* detailVC = (DetailViewController*)[segue destinationViewController];
+    UITableView* table = [self tableView];
+    NSIndexPath* indexPath = [table indexPathForSelectedRow];
+    Restaurant* currentRestaurant = [restaurants objectAtIndex:indexPath.row];
+    detailVC.restaurant = currentRestaurant;
+}
+
 
 /*
 // Override to support conditional editing of the table view.
