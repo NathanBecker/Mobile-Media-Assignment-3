@@ -107,9 +107,9 @@
 			children = (
 				0E6F215314F9FDFC004F682D /* Images */,
 				0E02F6BB14CD10E300C3EAE8 /* Restaurant.h */,
+				0E02F6BC14CD10E300C3EAE8 /* Restaurant.m */,
 				6362FDBD150495B800AAA741 /* Review.h */,
 				6362FDBE150495B800AAA741 /* Review.m */,
-				0E02F6BC14CD10E300C3EAE8 /* Restaurant.m */,
 				0EE5A6E214BEB490006BB5E1 /* AppDelegate.h */,
 				0EE5A6E314BEB490006BB5E1 /* AppDelegate.m */,
 				0EE5A6E514BEB491006BB5E1 /* MainStoryboard.storyboard */,

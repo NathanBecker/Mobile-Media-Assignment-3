@@ -90,19 +90,19 @@
     return restaurant.reviews.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ReviewCell";
+    NSString* cellIdentifier = @"ReviewCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        cell.textLabel.text = @"test";
-    
-    
-    // Configure the cell...
-    
+    UILabel* reviewTextLabel = (UILabel*)[cell viewWithTag:1];
+    UILabel* reviewHelpfulnessLabel = (UILabel*)[cell viewWithTag:2];
+    Review* reviewForIndexPath = [restaurant.reviews objectAtIndex:indexPath.row];
+    reviewTextLabel.text = reviewForIndexPath.text;
+    reviewHelpfulnessLabel.text = [NSString stringWithFormat:@"%i of %i found this review helpful", reviewForIndexPath.numberOfHelpfulReviews,reviewForIndexPath.numberOfHelpfulReviews + reviewForIndexPath.numberOfUnhelpfulReviews];
     return cell;
+    
 }
-
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
