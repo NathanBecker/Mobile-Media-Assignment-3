@@ -5,6 +5,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ReviewViewController.h"
 
 @implementation DetailViewController
 @synthesize addressLabel;
@@ -81,6 +82,14 @@
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"*Most helpful review – %i of %i found this helpful", bestReview.numberOfHelpfulReviews, [bestReview totalReview]];
     
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    ReviewViewController* reviewVC = (ReviewViewController*)[segue destinationViewController];
+    
+    reviewVC.restaurant = restaurant;
+}
+
 
 
 - (void)viewDidUnload
