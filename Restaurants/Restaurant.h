@@ -25,5 +25,6 @@
 -(int)age;
 -(Review*) mostHelpfulReview;
 -(float)averageCustomerReview;
+-(BOOL)isFavorite;
 
 @end

@@ -21,6 +21,7 @@
 @synthesize star5;
 @synthesize reviewLabel;
 @synthesize restaurant;
+@synthesize markAsFavorite;
 
 #pragma mark - View lifecycle
 
@@ -105,6 +106,7 @@
     [self setStar3:nil];
     [self setStar4:nil];
     [self setStar5:nil];
+    [self setMarkAsFavorite:nil];
     [super viewDidUnload];
 }
 
