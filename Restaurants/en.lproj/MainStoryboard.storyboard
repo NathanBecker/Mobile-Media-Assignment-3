@@ -168,7 +168,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Restaurant Name" id="26"/>
+                    <navigationItem key="navigationItem" title="Restaurant Name" id="26">
+                        <barButtonItem key="rightBarButtonItem" image="heart.png" id="U6Q-c3-S9J"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressLabel" destination="27" id="p4K-yi-X5k"/>
                         <outlet property="ageLabel" destination="tVm-OC-esT" id="At5-Wf-HEU"/>
@@ -234,6 +236,7 @@
     </scenes>
     <resources>
         <image name="Star_OFF.png" width="37" height="37"/>
+        <image name="heart.png" width="24" height="21"/>
     </resources>
     <classes>
         <class className="DetailViewController" superclassName="UIViewController">
