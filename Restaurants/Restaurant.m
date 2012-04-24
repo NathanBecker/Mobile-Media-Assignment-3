@@ -7,7 +7,7 @@
 #import "Review.h"
 
 @implementation Restaurant
-@synthesize address, name, cuisineType, yearOpened, reviews, bestReview;
+@synthesize address, name, cuisineType, yearOpened, reviews, bestReview, isFavorite;
 
 -(id)init{
     self = [super init];

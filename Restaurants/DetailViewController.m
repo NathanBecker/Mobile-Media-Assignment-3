@@ -21,7 +21,7 @@
 @synthesize star5;
 @synthesize reviewLabel;
 @synthesize restaurant;
-@synthesize markAsFavorite;
+@synthesize favoriteButton;
 
 #pragma mark - View lifecycle
 
@@ -81,6 +81,11 @@
     }
     
     helpfulReviewPercentageLabel.text = [NSString stringWithFormat:@"*Most helpful review – %i of %i found this helpful", bestReview.numberOfHelpfulReviews, [bestReview totalReview]];
+ 
+    
+    if (restaurant.isFavorite) {
+        favoriteButton.image = [UIImage imageNamed:@"heart_selected.png"];
+    }
     
 }
 
@@ -106,7 +111,7 @@
     [self setStar3:nil];
     [self setStar4:nil];
     [self setStar5:nil];
-    [self setMarkAsFavorite:nil];
+    [self setFavoriteButton:nil];
     [super viewDidUnload];
 }
 
@@ -137,4 +142,16 @@
 }
 
 
+- (IBAction)markAsFavorite:(id)sender {
+    //change the image here
+    
+    if (restaurant.isFavorite == false) {
+        favoriteButton.image = [UIImage imageNamed:@"heart_selected.png"];
+        restaurant.isFavorite = true;
+    }
+    else{
+            favoriteButton.image = [UIImage imageNamed:@"heart.png"];
+            restaurant.isFavorite = false;
+    }
+}
 @end
